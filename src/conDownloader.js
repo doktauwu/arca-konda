@@ -73,9 +73,10 @@ const conDownloader = async (emoticonPage, emoticonsTitle, convertProcessIndex) 
                                 const { success, err = '', results } = await new Promise(
                                     (resolve, reject) => {
                                         gifConvertCount["target"] = gifConvertCount["target"] + 1
-                                        PythonShell.run("convert-to-gif.py", {
+                                        console.log([path.resolve(`${savePath}/${fileName}`), path.resolve(`${savePath}/${fileName.split(".").shift()}.gif`)])
+                                        PythonShell.run("./src/convert-to-gif.py", {
                                             mode: "text",
-                                            pythonPath: "./python/python.exe",
+                                            pythonPath: "./src/python/python.exe",
                                             pythonOptions: ["-u"],
                                             scriptPath: "",
                                             args: [path.resolve(`${savePath}/${fileName}`), path.resolve(`${savePath}/${fileName.split(".").shift()}.gif`)]
@@ -104,7 +105,7 @@ const conDownloader = async (emoticonPage, emoticonsTitle, convertProcessIndex) 
 
                             })
                         }
-                        if (emoticons.filter(x => x.split(".").pop() == "mp4").length < 0) {
+                        if (emoticons.filter(x => x.split(".").pop() == "mp4").length < 1) {
                             rootResolve({ success: true, convertProcessIndex })
                         }
                     })
