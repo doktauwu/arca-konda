@@ -11,7 +11,7 @@
   "name": "dokta-konda",
   "version": "1.0.0",
   "description": "Arcalive emoticon downloader",
-  "main": "main.js",
+  "main": "./src/main.js",
   "scripts": {
     "test": "electron ."
   },

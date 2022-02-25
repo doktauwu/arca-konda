@@ -2,12 +2,12 @@
 
 @font-face {
   font-family: elice-regular;
-  src: url(./assets/EliceDigitalBaeum_Regular.ttf);
+  src: url(./assets/fonts/EliceDigitalBaeum_Regular.ttf);
   font-weight: normal;
 }
 @font-face {
   font-family: elice-bold;
-  src: url(./assets/EliceDigitalBaeum_Bold.ttf);
+  src: url(./assets/fonts/EliceDigitalBaeum_Bold.ttf);
   font-weight: bold;
 }
 

@@ -15,7 +15,7 @@ const createWindow = () => {
         title: "Konda - 아카콘 다운로더"
     })
 
-    win.loadFile('index.html')
+    win.loadFile("./src/index.html")
     win.webContents.openDevTools()
     console.log(win.id)
 }
@@ -37,33 +37,3 @@ app.whenReady().then(() => {
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') app.quit()
 })
-
-
-
-    // (function () {
-
-    //     var { remote } = require('remote');
-    //     var currentWindow = remote.BrowserWindow.getFocusedWindow();
-
-    //     function init() {
-    //         document
-    //             .querySelector(".titlebar__btn-minimize")
-    //             .addEventListener("click", () => {
-    //                 var window = currentWindow.getFocusedWindow();
-    //                 window.minimize();
-    //             });
-    //         document
-    //             .querySelector(".titlebar__btn-close")
-    //             .addEventListener("click", () => {
-    //                 var window = currentWindow.getFocusedWindow();
-    //                 window.close();
-    //             });
-    //     };
-
-    //     document.onreadystatechange = function () {
-    //         if (document.readyState == "complete") {
-    //             init();
-    //         }
-    //     };
-
-    // })();
