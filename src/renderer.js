@@ -60,7 +60,7 @@ const noticeCardContent = {
     "0": [noticeCardStatus["warn"], "입력이 올바르지 않습니다"],
     "1": [noticeCardStatus["info"], "다운로드 및 MP4 파일 변환을 하는 중입니다"],
     "2": [noticeCardStatus["warn"], "URL 혹은 폴더명이 유효하지 않습니다"],
-    "3": [noticeCardStatus["success"], "변환이 완료되었습니다"]
+    "3": [noticeCardStatus["success"], "저장 및 변환이 성공적으로 완료되었습니다"]
 }
 
 
