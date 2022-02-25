@@ -123,6 +123,8 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
 }
 .header__background {
   width: 100%;
@@ -143,6 +145,8 @@ body {
   bottom: 10px;
   font-family: var(--font_elice-regular);
   opacity: 0.7;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
 }
 .header__infos__website {
   cursor: pointer;
@@ -195,6 +199,8 @@ body {
   color: var(--secondary-color);
   font-family: var(--font_elice-regular);
   margin-bottom: 7px;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
 }
 
 .control-panel__input {
@@ -223,6 +229,8 @@ body {
   border: 0px solid #eee; /* Here */
   background-color: var(--primary-color);
   border-radius: 10px;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
 }
 
 #download-btn:hover {
@@ -243,6 +251,8 @@ body {
   position: relative;
   border-radius: 10px;
   overflow: hidden;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
 }
 
 .con-info__bg-video-thumbnail {
@@ -319,6 +329,8 @@ body {
   justify-content: flex-start;
   align-items: center;
   border-radius: 5px;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
 }
 
 .notice-card__symbol {
