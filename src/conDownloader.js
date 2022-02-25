@@ -73,9 +73,9 @@ const conDownloader = async (emoticonPage, emoticonsTitle, convertProcessIndex) 
                                 const { success, err = '', results } = await new Promise(
                                     (resolve, reject) => {
                                         gifConvertCount["target"] = gifConvertCount["target"] + 1
-                                        PythonShell.run("./src/convert-to-gif.py", {
+                                        PythonShell.run("./resources/app/src/convert-to-gif.py", {
                                             mode: "text",
-                                            pythonPath: "./src/python/python.exe",
+                                            pythonPath: "./resources/app/src/python/python.exe",
                                             pythonOptions: ["-u"],
                                             scriptPath: "",
                                             args: [path.resolve(`${savePath}/${fileName}`), path.resolve(`${savePath}/${fileName.split(".").shift()}.gif`)]
