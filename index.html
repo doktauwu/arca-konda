@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <!-- <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    /> -->
+    <!-- <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    /> -->
+    <title>Dokta-Konda</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <!-- URL input 태그에 type 속성으로 체크 -->
+    <div class="titlebar">
+      <div class="titlebar__column">
+        <div class="titlebar__title">Konda - 아카콘 다운로더</div>
+      </div>
+      <div class="titlebar__column">
+        <div class="titlebar__btn titlebar__btn-minimize">_</div>
+        <div class="titlebar__btn titlebar__btn-close">X</div>
+      </div>
+    </div>
+    <div class="app">
+      <div class="header">
+        <div
+          class="header__background"
+        ></div>
+        <img
+          class="header__logo"
+          src="./logo.svg"
+        />
+        <div class="header__infos">V 1.0.0<br>doktauwu.com/konda</div>
+      </div>
+      <div class="control-panel">
+        <div class="control-panel__column">
+          <div class="control-panel__input-group">
+            <div class="control-panel__input-label">아카콘 페이지 URL</div>
+            <input
+              class="control-panel__input"
+              id="emoticon-url"
+              type="url"
+              required
+              placeholder="ex) https://arca.live/e/18107"
+              value="https://arca.live/e/18107"
+            />
+          </div>
+          <div class="control-panel__input-group">
+            <div class="control-panel__input-label">저장 폴더명</div>
+            <input
+              class="control-panel__input"
+              id="save-folder-name"
+              type="url"
+              required
+              placeholder="ex) 페이몬콘"
+            />
+          </div>
+          <div class="control-panel__input-group">
+            <input
+              value="바탕화면에 다운로드"
+              class="control-panel__submit"
+              id="download-btn"
+              type="button"
+            />
+          </div>
+          <!-- <div class="control-panel__input-group">
+            <div class="control-panel__input-label">저장 위치</div>
+            <input
+              class="control-panel__input"
+              id="save-path"
+              type="file"
+              required
+              webkitdirectory
+            />
+          </div> -->
+        </div>
+        <div class="control-panel__column">
+          <div class="control-panel__con-info" style="background-image: url(https://www.macmillandictionary.com/external/slideshow/full/46528_full.jpg);">
+            <video class="con-info__bg-video-thumbnail " loop autoplay src=""></video>
+            <div class="con-info__bg-overlay"></div>
+            <div class="con-info__content">
+              <div class="con-info__title">-</div>
+              <div class="con-info__uploader">업로더 : -</div>
+              <div class="con-info__sale-count">판매수 : -</div>
+            </div>
+          </div>
+          <div class="control-panel__notice-card">
+            <img class="notice-card__symbol" src="./assets/status-icons/status-icon__info.svg"></img>
+            <div class="notice-card__text">폴더명에는 다음과 같은 문자들을<br>사용할 수 없습니다. \ / : * ? " < > | </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="renderer.js"></script>
+</html>
