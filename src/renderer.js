@@ -1,4 +1,5 @@
 const { ipcRenderer } = require("electron");
+const open = require("open");
 const DOMParser = require("dom-parser")
 const fileNameCheckRegex = /[\\/:*?"<>|]/
 const homeDir = require('os').homedir()
@@ -182,6 +183,8 @@ const inputChangeHandler = (event) => {
 
 emoticonUrlInput.addEventListener("focus", inputChangeHandler)
 saveFolderNameInput.addEventListener("focus", inputChangeHandler)
+
+document.querySelector(".header__infos__website").addEventListener("click", () => { console.log("FMIWQJFMQWIFJMIOQWASFJIOAJFIOA"); open("https://konda.doktauwu.com") })
 
 
 downloadBtn.addEventListener("click", downloadBtnHandler)

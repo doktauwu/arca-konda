@@ -144,6 +144,9 @@ body {
   font-family: var(--font_elice-regular);
   opacity: 0.7;
 }
+.header__infos__website {
+  cursor: pointer;
+}
 
 .control-panel {
   width: 100%;
