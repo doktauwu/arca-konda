@@ -299,12 +299,14 @@ body {
   color: var(--secondary-color);
   font-size: 13px;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .con-info__sale-count {
   font-family: var(--font_elice-regular);
   font-size: 10px;
   color: var(--third-color);
+  text-align: center;
 }
 
 .control-panel__input.wrong-input {
