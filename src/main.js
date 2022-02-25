@@ -17,7 +17,6 @@ const createWindow = () => {
 
     win.loadFile("./src/index.html")
     win.webContents.openDevTools()
-    console.log(win.id)
 }
 
 app.whenReady().then(() => {

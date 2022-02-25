@@ -184,7 +184,7 @@ const inputChangeHandler = (event) => {
 emoticonUrlInput.addEventListener("focus", inputChangeHandler)
 saveFolderNameInput.addEventListener("focus", inputChangeHandler)
 
-document.querySelector(".header__infos__website").addEventListener("click", () => { console.log("FMIWQJFMQWIFJMIOQWASFJIOAJFIOA"); open("https://konda.doktauwu.com") })
+document.querySelector(".header__infos__website").addEventListener("click", () => { open("https://konda.doktauwu.com") })
 
 
 downloadBtn.addEventListener("click", downloadBtnHandler)
