@@ -140,6 +140,7 @@ const downloadBtnHandler = () => {
         isValid = false
     }
     if (isValid == true) {
+        updateNoticeCard(1)
         ipcRenderer.send("request-download", {
             "emoticonUrl": emoticonUrlInput.value,
             "folderName": saveFolderNameInput.value,
@@ -168,7 +169,6 @@ const downloadBtnHandler = () => {
             document.querySelector(".control-panel__con-info").style.backgroundImage = `url(${thumbnailUrl})`
             emoticonUrlInput.value = ""
             saveFolderNameInput.value = ""
-            updateNoticeCard(1)
         }).catch(
             () => { updateNoticeCard(2) }
         )
