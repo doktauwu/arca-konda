@@ -1,4 +1,7 @@
 {
+  "_comment": [
+    "asar 옵션 활성화 금지(python 실행 불가"
+  ],
   "dependencies": {
     "dom-parser": "^0.1.6",
     "node-fetch": "^3.0.0-beta.9",
@@ -9,7 +12,7 @@
   "devDependencies": {
     "electron": "^18.0.0-alpha.3"
   },
-  "name": "dokta-konda",
+  "name": "arca-konda",
   "version": "1.0.0",
   "description": "Arcalive emoticon downloader",
   "main": "./src/main.js",
@@ -17,5 +20,27 @@
     "test": "electron ."
   },
   "author": "doktauwu",
-  "license": "ISC"
+  "license": "ISC",
+  "build": {
+    "asar": false,
+    "appId": "doktauwu.arca-konda",
+    "productName": "Konda",
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "./src/assets/icon.ico"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "installerIcon": "./src/assets/icon.ico",
+      "createDesktopShortcut": true
+    }
+  }
 }
