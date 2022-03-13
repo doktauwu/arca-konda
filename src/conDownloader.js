@@ -73,7 +73,8 @@ const conDownloader = async (emoticonPage, emoticonsTitle, convertProcessIndex) 
                                                 // !!FOR DEBUG!!    PythonShell.run("./src/convert-to-gif.py", {
                                                 PythonShell.run("./resources/app/src/convert-to-gif.py", {
                                                     mode: "text",
-                                                    // !!FOR DEBUG!!     pythonPath: "./src/python/python.exe",
+                                                    // !!FOR DEBUG!!(use python in src folder)     pythonPath: "./src/python/python.exe",
+                                                    // !!FOR DEBUG!!(use python that user installed)     pythonPath: "",
                                                     pythonPath: "./resources/app/src/python/python.exe",
                                                     pythonOptions: ["-u"],
                                                     scriptPath: "",
