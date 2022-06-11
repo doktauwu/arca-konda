@@ -5,6 +5,7 @@ const fileNameCheckRegex = /[\\/:*?"<>|]/
 const homeDir = require('os').homedir()
 const desktopDir = `${homeDir}/Desktop`;
 const childProcess = require('child_process');
+const fetch = require("node-fetch")
 
 
 let convertProcessIndex = 0;
@@ -155,18 +156,19 @@ const downloadBtnHandler = () => {
             const conTitle = doc.getElementsByClassName("title-row")[0].childNodes[1].innerHTML.split("\n")[1]
             const uploaderName = "업로더 : " + doc.getElementsByClassName("info-row")[0].getElementsByClassName("member-info")[0].childNodes[0].text.split("\n")[1]
             const saleCount = "판매수 : " + doc.getElementsByClassName("article-info")[0].getElementsByClassName("body")[0].innerHTML
-            const thumbnailUrl = "https:" + doc.getElementsByClassName("emoticon")[0].getAttribute("src")
+            const thumbnailUrl = doc.getElementsByClassName("emoticon")[0].attributes.filter(attribute => attribute.name === "src").length > 0 ? doc.getElementsByClassName("emoticon")[0].getAttribute("src").replace("//", "https://") : doc.getElementsByClassName("emoticon")[0].getAttribute("data-src").replace("//", "https://");
             if (thumbnailUrl.split(".").pop() == "mp4") {
                 document.getElementsByClassName("con-info__bg-video-thumbnail")[0].src = thumbnailUrl
                 document.getElementsByClassName("con-info__bg-video-thumbnail")[0].classList.add("show")
             }
             else {
                 document.getElementsByClassName("con-info__bg-video-thumbnail")[0].classList.remove("show")
+                console.log(`url('${thumbnailUrl}')`)
+                document.querySelector(".control-panel__con-info").style.backgroundImage = `url('${thumbnailUrl}')`
             }
             document.querySelector(".con-info__title").innerText = conTitle;
             document.querySelector(".con-info__uploader").innerText = uploaderName;
             document.querySelector(".con-info__sale-count").innerText = saleCount;
-            document.querySelector(".control-panel__con-info").style.backgroundImage = `url(${thumbnailUrl})`
             emoticonUrlInput.value = ""
             saveFolderNameInput.value = ""
         }).catch(

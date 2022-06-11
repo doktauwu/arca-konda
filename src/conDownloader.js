@@ -51,8 +51,15 @@ const conDownloader = async (emoticonPage, emoticonsTitle, convertProcessIndex) 
             fetch(emoticonPage).then(data => { return data.text() }).then(html => {
                 const parser = new DOMParser;
                 const doc = parser.parseFromString(html, "text/html");
-                let emoticons = doc.getElementsByClassName("emoticons-wrapper")[0].childNodes.filter(emoticon => emoticon.getAttribute("src") != null);
-                emoticons = emoticons.map(node => node.getAttribute("src"))
+                let emoticons = doc.getElementsByClassName("emoticons-wrapper")[0].childNodes.filter(emoticon => emoticon.getAttribute("src") != null || emoticon.getAttribute("data-src") != null);
+                emoticons = emoticons.map(node => {
+                    if(node.getAttribute("src") != null){
+                        return node.getAttribute("src")
+                    }
+                    else if(node.getAttribute("data-src") != null){
+                        return node.getAttribute("data-src")
+                    }
+                })
                 const savePath = `${desktopDir}/${emoticonsTitle}`;
                 // const savePath = `./${emoticonsTitle}`;
 
